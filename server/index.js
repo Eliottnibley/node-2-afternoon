@@ -5,6 +5,7 @@ const ctlr = require('./controllers/messages_controller')
 const SERVER_PORT = 3001
 
 app.use(express.json())
+app.use(express.static(__dirname + '/../public/build'))
 
 app.post('/api/messages', ctlr.createMessage)
 app.get('/api/messages', ctlr.readMessages)
